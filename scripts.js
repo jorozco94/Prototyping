@@ -44,3 +44,13 @@ test.resize(test2);
 console.log(test)
 test.move(test3)
 console.log(test)
+
+function changeWindow(programWindowInstance) {
+  const changedSize = new Size(400, 300);
+  const changedPos = new Position(100, 150);
+  programWindowInstance.resize(changedSize);
+  programWindowInstance.move(changedPos);
+  return programWindowInstance;
+}
+
+console.log(changeWindow(test))
