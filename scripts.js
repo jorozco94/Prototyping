@@ -1,3 +1,4 @@
+// Prototype syntax fxn for width and height of window
 function Size(width = 80, height = 60) {
   this.width = width;
   this.height = height;
@@ -8,6 +9,7 @@ Size.prototype.resize = function(newWidth, newHeight) {
   this.height = newHeight;
 }
 
+// Prototype syntax fxn for vert/horiz pos of window
 function Position(x = 0, y = 0) {
   this.horizontalPos = x;
   this.verticalPos = y;
@@ -18,6 +20,7 @@ Position.prototype.move = function(newX, newY) {
   this.verticalPos = newY;
 }
 
+// Class syntax fxn for our Program Window (containing a size and Pos)
 class ProgramWindow {
   constructor() {
     this.screenSize = new Size(800, 600);
@@ -36,15 +39,16 @@ class ProgramWindow {
   }
 }
 
-const test = new ProgramWindow();
-const test2 = new Size(900,400)
-const test3 = new Position(50, 100)
-console.log(test)
-test.resize(test2);
-console.log(test)
-test.move(test3)
-console.log(test)
+// const test = new ProgramWindow();
+// const test2 = new Size(900,400)
+// const test3 = new Position(50, 100)
+// console.log(test)
+// test.resize(test2);
+// console.log(test)
+// test.move(test3)
+// console.log(test)
 
+// Fxn that takes in instance of Program Window and sets it to new size/pos
 function changeWindow(programWindowInstance) {
   const changedSize = new Size(400, 300);
   const changedPos = new Position(100, 150);
@@ -53,4 +57,4 @@ function changeWindow(programWindowInstance) {
   return programWindowInstance;
 }
 
-console.log(changeWindow(test))
+// console.log(changeWindow(test))
