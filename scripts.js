@@ -24,5 +24,23 @@ class ProgramWindow {
     this.size = new Size();
     this.position = new Position();
   }
+
+  resize(newSize) {
+    this.size.width = newSize.width > this.screenSize.width ? this.screenSize.width : newSize.width >= 1 ? newSize.width : 1;
+    this.size.height = newSize.height > this.screenSize.height ? this.screenSize.height : newSize.height >= 1 ? newSize.height : 1;
+  }
+
+  move(newPosition) {
+    this.position.horizontalPos = newPosition.horizontalPos > this.size.width ? this.size.width : newPosition.horizontalPos > 0 ? newPosition.horizontalPos : 0;
+    this.position.verticalPos = newPosition.verticalPos > this.size.height ? this.size.height : newPosition.verticalPos > 0 ? newPosition.verticalPos : 0;
+  }
 }
 
+const test = new ProgramWindow();
+const test2 = new Size(900,400)
+const test3 = new Position(50, 100)
+console.log(test)
+test.resize(test2);
+console.log(test)
+test.move(test3)
+console.log(test)
